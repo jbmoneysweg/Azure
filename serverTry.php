@@ -29,7 +29,7 @@ $connectionInfo = array("UID" => "jbmoneysweg", "pwd" => "Jeremiah72*", "Databas
 $serverName = "tcp:jbsdatatest.database.windows.net,1433";
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
-$sql = "INSERT INTO website3 (ip, locations, visit, pg1) VALUES ($ip, $locations, $visit, $pgOne)";
+$sql = "INSERT INTO ArchAutoParts (ip, locations, visit, pg1) VALUES ($ip, $locations, $visit, $pgOne)";
 
 //$sql = ("SELECT * from ArchAutoParts_1 where ID='100.12.176.77'")
 
