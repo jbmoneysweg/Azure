@@ -8,15 +8,15 @@
 
 //extension=php_pdo.dll;
 
-$ip = $_POST["ipAdd"];
-$locations = $_POST["locations"];
-$visit = $_POST["visit"];
-$pgOne = $_POST["pgOne"];
+$ipp = $_POST["ipAdd"];
+$locationss = $_POST["locations"];
+$visits = $_POST["visit"];
+$pgOnes = $_POST["pgOne"];
 
 $ip = 301;
-$locations = "Jeremiah Booker";
-$visit = "mail";
-$pgOne = "jeremiahbooker82@gmail.com";
+$locations = 'Jeremiah Booker';
+$visit = 'mail';
+$pgOne = 'jeremiahbooker82@gmail.com';
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
