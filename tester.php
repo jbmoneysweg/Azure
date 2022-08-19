@@ -30,11 +30,6 @@ if ($conn === false)
     {  
     die(print_r(sqlsrv_errors() , true));  
     }  
-  
-if (isset($_GET['action']))  
-    {  
-    if ($_GET['action'] == 'add')  
-        {  
         /*Insert data.*/  
         $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
 VALUES (?,?,?,?)";  
@@ -60,7 +55,5 @@ VALUES (?,?,?,?)";
             {  
             echo "Registration complete.</br>";  
             }  
-        }  
-    }  
 
 ?>
