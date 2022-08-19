@@ -55,5 +55,6 @@ VALUES (?,?,?,?)";
             {  
             echo "Registration complete.</br>";  
             }  
+       }
 
 ?>
