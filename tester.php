@@ -12,6 +12,7 @@ $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
+$visit =1;
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -25,6 +26,33 @@ if ($conn === false)
     {  
     die(print_r(sqlsrv_errors() , true));  
     }  
+
+
+$sql = "SELECT * FROM test2 ORDER BY Ip"; 
+$stmt = sqlsrv_query($conn, $sql); 
+if($stmt === false) 
+{ 
+die(print_r(sqlsrv_errors(), true)); 
+} 
+ 
+if(sqlsrv_has_rows($stmt)) 
+{ 
+    /*
+print("<table border='1px'>"); 
+print("<tr><td>Emp Id</td>"); 
+print("<td>Name</td>"); 
+print("<td>education</td>"); 
+print("<td>Email</td></tr>"); 
+ */
+while($row = sqlsrv_fetch_array($stmt)) 
+{ 
+if (.$row['Ip']. == $ip) {
+    $visit = $visit + 1;
+}
+} 
+  
+}
+
         /*Insert data.*/  
         $insertSql = "INSERT INTO test2 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
