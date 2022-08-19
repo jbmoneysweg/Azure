@@ -54,7 +54,7 @@ if (.$row['Ip']. == $ip) {
 }
 
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test2 (Ip,locations,visit,page)   
+        $insertSql = "INSERT INTO test3 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne  
         );  
