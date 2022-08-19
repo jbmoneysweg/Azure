@@ -12,7 +12,7 @@ $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
-$visit =1;
+$visit = 1;
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -44,7 +44,7 @@ print("<td>Name</td>");
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
  */
-while($row = sqlsrv_fetch_array($stmt)) 
+while($row = sqlsrv_fetch_array($stmt) != NULL) 
 { 
 if ($row['Ip'] == $ip) {
     $visit = $visit + 1;
