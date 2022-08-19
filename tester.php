@@ -13,42 +13,54 @@ $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
 
-$id = 3;
 $ip = 301;
 $locations = "Jeremiah Booker";
 $visit = "mail";
-$pgOne = "jbmoneysweg@gmail.com";
+$pgOne = "jeremiahbooker82@gmail.com";
 
-echo "happened";
-
-try {
-    $conn = new PDO("sqlsrv:server = tcp:jbsdatatest.database.windows.net,1433; Database = JBsDataTest", "jbmoneysweg", "Jeremiah72*");
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-}
-catch (PDOException $e) {
-    print("Error connecting to SQL Server.");
-    die(print_r($e));
-}
-
-// SQL Server Extension Sample Code:
-$connectionInfo = array("UID" => "jbmoneysweg", "pwd" => "Jeremiah72*", "Database" => "JBsDataTest", "LoginTimeout" => 30, "Encrypt" => 1, "TrustServerCertificate" => 0);
-$serverName = "tcp:jbsdatatest.database.windows.net,1433";
-$conn = sqlsrv_connect($serverName, $connectionInfo);
-
-$sql = "INSERT INTO  empTable (Id, emp_id, name, education, email) VALUES ($id, $ip, $locations, $visit, $pgOne)";
-
-//$sql = ("SELECT * from ArchAutoParts_1 where ID='100.12.176.77'")
-
-
-//$params = array($ip, $locations, $visit, $pgOne);
-
-sqlsrv_query($conn, $sql);
-
-//if( $stmt === false ) {
-  //   die( print_r( sqlsrv_errors(), true));
-//}
-//echo "Connected Succesfully";
-
-echo "Did it";
+$serverName = "jbsdatatest.database.windows.net";  
+$connectionOptions = array(  
+    "Database" => "JBsDataTest",  
+    "UID" => "jbmoneysweg",  
+    "PWD" => "Jeremiah72*"  
+);  
+$conn = sqlsrv_connect($serverName, $connectionOptions);  
+  
+if ($conn === false)  
+    {  
+    die(print_r(sqlsrv_errors() , true));  
+    }  
+  
+if (isset($_GET['action']))  
+    {  
+    if ($_GET['action'] == 'add')  
+        {  
+        /*Insert data.*/  
+        $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
+VALUES (?,?,?,?)";  
+        $params = array($ip, $locations, $visit, $pgOne]  
+        );  
+        $stmt = sqlsrv_query($conn, $insertSql, $params);  
+        if ($stmt === false)  
+            {  
+            /*Handle the case of a duplicte e-mail address.*/  
+            $errors = sqlsrv_errors();  
+            if ($errors[0]['code'] == 2601)  
+                {  
+                echo "The e-mail address you entered has already been used.</br>";  
+                }  
+  
+            /*Die if other errors occurred.*/  
+              else  
+                {  
+                die(print_r($errors, true));  
+                }  
+            }  
+          else  
+            {  
+            echo "Registration complete.</br>";  
+            }  
+        }  
+    }  
 
 ?>
