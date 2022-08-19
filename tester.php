@@ -46,7 +46,7 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt)) 
 { 
-if (.$row['Ip']. == $ip) {
+if ($row['Ip'] == $ip) {
     $visit = $visit + 1;
 }
 } 
