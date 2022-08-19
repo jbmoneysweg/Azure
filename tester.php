@@ -33,7 +33,7 @@ if ($conn === false)
         /*Insert data.*/  
         $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
 VALUES (?,?,?,?)";  
-        $params = array('301', 'Jeremiah Booker', 'mail', 'jeremiahbooker@gmail.com  
+        $params = array(&$ip, &$locations, &$visit, &$pgOne  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
