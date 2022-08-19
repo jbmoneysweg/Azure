@@ -26,7 +26,7 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test (Ip,locations,visit,page)   
+        $insertSql = "INSERT INTO test2 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne  
         );  
