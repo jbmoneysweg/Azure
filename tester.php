@@ -38,7 +38,7 @@ if (isset($_GET['action']))
         /*Insert data.*/  
         $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
 VALUES (?,?,?,?)";  
-        $params = array($ip, $locations, $visit, $pgOne  
+        $params = array('301', 'Jeremiah Booker', 'mail', 'jeremiahbooker@gmail.com  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
