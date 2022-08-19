@@ -52,7 +52,7 @@ if ($row['Ip'] == $ip) {
 } 
   
 }
-
+$visit = intval($visit);
         /*Insert data.*/  
         $insertSql = "INSERT INTO test4 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
