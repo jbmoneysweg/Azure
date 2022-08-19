@@ -28,7 +28,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test2 ORDER BY Ip"; 
+$sql = "SELECT * FROM test3 ORDER BY Ip"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
