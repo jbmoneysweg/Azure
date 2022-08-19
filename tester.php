@@ -28,7 +28,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test3 ORDER BY Ip"; 
+$sql = "SELECT * FROM test4 ORDER BY Ip"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
@@ -54,7 +54,7 @@ if ($row['Ip'] == $ip) {
 }
 
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test3 (Ip,locations,visit,page)   
+        $insertSql = "INSERT INTO test4 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne  
         );  
