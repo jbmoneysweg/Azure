@@ -8,15 +8,10 @@
 
 //extension=php_pdo.dll;
 
-$ipp = $_POST["ipAdd"];
-$locationss = $_POST["locations"];
-$visits = $_POST["visit"];
-$pgOnes = $_POST["pgOne"];
-
-$ip = 301;
-$locations = 'Jeremiah Booker';
-$visit = 'mail';
-$pgOne = 'jeremiahbooker82@gmail.com';
+$ip = $_POST["ipAdd"];
+$locations = $_POST["locations"];
+$visit = $_POST["visit"];
+$pgOne = $_POST["pgOne"];
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -31,14 +26,14 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
         /*Insert data.*/  
-        $insertSql = "INSERT INTO empTable (emp_id,name,education,email)   
+        $insertSql = "INSERT INTO test (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
-            /*Handle the case of a duplicte e-mail address.*/  
+            /*Handle the case of a duplicte e-mail address. */ 
             $errors = sqlsrv_errors();  
             if ($errors[0]['code'] == 2601)  
                 {  
