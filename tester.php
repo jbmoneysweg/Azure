@@ -22,36 +22,40 @@ $connectionOptions = array(
 );  
 $conn = sqlsrv_connect($serverName, $connectionOptions);  
   
+
 if ($conn === false)  
     {  
     die(print_r(sqlsrv_errors() , true));  
     }  
 
 
-$sql = "SELECT * FROM test5"; 
 //$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
+$sql = "SELECT * FROM test5 ORDER BY Ip"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
 die(print_r(sqlsrv_errors(), true)); 
 } 
  
-
 if(sqlsrv_has_rows($stmt)) 
 { 
-  /*
+    /*
 print("<table border='1px'>"); 
 print("<tr><td>Emp Id</td>"); 
 print("<td>Name</td>"); 
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
-*/
+ */
 while($row = sqlsrv_fetch_array($stmt) != NULL) 
 { 
-    $visit = $visit +1;
+if ($row['Ip'] == $ip) {
+    $visit = $visit + 1;
+}
 } 
   
 }
+$visit = intval($visit);
+
 
         /*Insert data.*/  
         $insertSql = "INSERT INTO test5 (Ip,locations,visit,page)   
