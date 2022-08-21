@@ -29,36 +29,37 @@ if ($conn === false)
 
 
 //$sql = "SELECT * FROM test5 ORDER BY Ip"; 
-$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
+$sql = "SELECT count(*) FROM test5 WHERE Ip = " + $ip; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
 die(print_r(sqlsrv_errors(), true)); 
 } 
  
-
+/* 
 if(sqlsrv_has_rows($stmt)) 
 { 
-  /* 
+  
 print("<table border='1px'>"); 
 print("<tr><td>Emp Id</td>"); 
 print("<td>Name</td>"); 
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
- */
+
 while($row = sqlsrv_fetch_array($stmt) != NULL) 
 { 
     $visit = $visit + 1;
 } 
   
 }
+ */
 
-$visit = $visit + " ";
+$visit = $stmt;
 
         /*Insert data.*/  
         $insertSql = "INSERT INTO test5 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
-        $params = array($ip, $locations, $int_value, $pgOne  
+        $params = array($ip, $locations, $visit, $pgOne  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
