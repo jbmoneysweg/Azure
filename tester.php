@@ -55,11 +55,12 @@ while($row = sqlsrv_fetch_array($stmt) != NULL)
 
 
 
+$int_value = intval( $visit );
 
         /*Insert data.*/  
         $insertSql = "INSERT INTO test5 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
-        $params = array($ip, $locations, $visit, $pgOne  
+        $params = array($ip, $locations, $int_value, $pgOne  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
