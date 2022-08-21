@@ -29,7 +29,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
+$sql = "SELECT * FROM test5 WHERE Ip='2600:4041:23:1100:530:cd3f:26d5:364e' "; 
 //$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
