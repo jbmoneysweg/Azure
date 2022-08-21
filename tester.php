@@ -46,11 +46,11 @@ print("<td>Name</td>");
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
  */
-while($row = sqlsrv_fetch_array($stmt)) //!= NULL
+while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
-if ($row['Ip'] == $ip) {
+//if ($row['Ip'] == $ip) {
     $visit = $visit + 1;
-}
+//}
 } 
   
 }
