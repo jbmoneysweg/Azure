@@ -30,7 +30,7 @@ if ($conn === false)
 
 //$sql = "SELECT * FROM test5 ORDER BY Ip"; 
 $sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
-$stat = sqlsrv_query($conn, $sql); 
+$stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
 die(print_r(sqlsrv_errors(), true)); 
