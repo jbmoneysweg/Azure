@@ -29,8 +29,8 @@ if ($conn === false)
     }  
 
 
-//$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
-$sql = "SELECT * FROM test5"; 
+$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
+//$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
@@ -48,9 +48,9 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
-if ($row['Ip'] == $ip) {
+//if ($row['Ip'] == $ip) {
     $visit = $visit + 1;
-}
+//}
 } 
   
 }
