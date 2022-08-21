@@ -29,7 +29,7 @@ if ($conn === false)
 
 
 //$sql = "SELECT * FROM test5 ORDER BY Ip"; 
-$sql = "SELECT count(*) FROM test5 WHERE Ip = " + $ip; 
+$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
@@ -46,9 +46,9 @@ print("<td>Name</td>");
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
 */
-while($row = sqlsrv_fetch_array($stmt)) 
+while($row = sqlsrv_fetch_array($stmt) != NULL) 
 { 
-    $visit = $row['count(*)'];
+    $visit = $visit +1;
 } 
   
 }
