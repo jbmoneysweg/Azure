@@ -28,8 +28,8 @@ if ($conn === false)
     }  
 
 
-//$sql = "SELECT * FROM test5 ORDER BY Ip"; 
-$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
+$sql = "SELECT * FROM test5"; 
+//$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
