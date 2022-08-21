@@ -30,7 +30,7 @@ if ($conn === false)
 
 
 //$sql = "SELECT * FROM test5 WHERE Ip = " + $ip; 
-$sql = "SELECT * FROM test5 ORDER BY Ip"; 
+$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
 { 
@@ -54,7 +54,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 } 
   
 }
-$visit = intval($visit);
+//$visit = intval($visit);
 
 
         /*Insert data.*/  
