@@ -24,12 +24,12 @@ function divide($a,$b){
     if( !isset($aResult['error']) ) {
 
         switch($_POST['functionname']) {
-            case 'add':
+            case 'compare':
                if( !is_array($_POST['arguments']) || (count($_POST['arguments']) < 2) ) {
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = add(floatval($_POST['arguments'][0]), floatval($_POST['arguments'][1]));
+                   $aResult['result'] = compare(floatval($_POST['arguments'][0]), floatval($_POST['arguments'][1]));
                }
                break;
 
