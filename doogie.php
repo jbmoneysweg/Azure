@@ -55,15 +55,14 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
-$time = $row[time] + $time;
-$value = $row[value] + $value;
+$time = floatval($row[time]) + $time;
+$value = floatval($row[value]) + $value;
 $visit = $visit + 1;
 } 
   $time = $time / $visit;
   $value =  $value / $visit;
-  $sendback = $time + "." + $value;
+  $sendback = $time + "." + $value + "";
 }
-$sendback = "hello";
  return $sendback;
 }
 
