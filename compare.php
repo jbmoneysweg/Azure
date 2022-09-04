@@ -1,7 +1,7 @@
 <?php
     header('Content-Type: application/json');
 
-    function add($a,$b){
+    function compare($a,$b){
   $c=$a+$b;
   return $c;
 }
