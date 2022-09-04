@@ -16,7 +16,7 @@ $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
-$visit = "1";
+$visit = 1;
 $time = 0.0;
 $value = 0.0;
 $sendback = "";
@@ -55,9 +55,9 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
-  if ($visit == "1") {
-$time = ($row["time"]) ;
-$value = ($row["value"]) ;
+  if ($visit < 3) {
+$time = ($row[0]) ;
+$value = ($row[1]) ;
   }
 $visit = $visit + 1;
 } 
