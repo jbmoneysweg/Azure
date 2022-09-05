@@ -59,7 +59,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 $time = ($row[0]) ;
 $value = ($row[1]) ;
   }
-$visit = $visit + 1;
+$value = $visit + 1;
 } 
   return $time;
   $time = $time / $visit;
