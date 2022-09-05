@@ -60,10 +60,10 @@ $time = $row[0] + $time;
 $value = ($row[1]) + $value;
 $visit = $visit + 1;
 } 
-  return $time;
   $time = $time / $visit;
   $value =  $value / $visit;
   $sendback = $time + "." + $value + "";
+  return $sendback;
 }
 }
 
