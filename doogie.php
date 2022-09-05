@@ -16,7 +16,7 @@ $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
-$visit = 1;
+$visit = 0;
 $time = 0.0;
 $value = 0.0;
 $sendback = "";
@@ -60,10 +60,10 @@ $time = $row[0] + $time;
 $value = ($row[1]) + $value;
 $visit = $visit + 1;
 } 
+  return $value;
   $time = $time / $visit;
   $value =  $value / $visit;
   $sendback = $time + "." + $value + "";
-  return $sendback;
 }
 }
 
