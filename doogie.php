@@ -18,7 +18,7 @@ $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
 $visit = 1;
 $time = 0.0;
-$value = "";
+$value = 0.0;
 $sendback = "";
 
 $serverName = "jbsdatatest.database.windows.net";  
@@ -55,10 +55,9 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt)) //!= NULL
 { 
-  if ($visit < 2) {
-$time = $row;
-$value = ($row[1]) ;
-  }
+  
+$time = $row[0] + $time;
+$value = ($row[1]) + $value;
 $visit = $visit + 1;
 } 
   return $time;
