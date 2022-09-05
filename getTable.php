@@ -1,5 +1,9 @@
 function compare($a,$b){
 
+$ip = $_POST["ipAdd"];
+$locations = $_POST["locations"];
+$visit = $_POST["visit"];
+$pgOne = $_POST["pgOne"];
 $visit = 0;
 $time = 0.0;
 $value = 0.0;
@@ -21,7 +25,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test8 WHERE password="'" + $a + "'" "; 
+$sql = "SELECT * FROM test8 WHERE password='" + $a + "'" "; 
 //$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
@@ -60,7 +64,7 @@ $aResult = array();
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = compare(floatval($_POST['arguments'][0]), floatval($_POST['arguments'][1]));
+                   $aResult['result'] = compare(strval($_POST['arguments'][0]), strval($_POST['arguments'][1]));
                }
                break;
 
