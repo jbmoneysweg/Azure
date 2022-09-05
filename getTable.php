@@ -60,7 +60,7 @@ $aResult = array();
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = compare(($_POST['arguments'][0]), ($_POST['arguments'][1]));
+                   $aResult['result'] = compare(strval($_POST['arguments'][0]), strval($_POST['arguments'][1]));
                }
                break;
 
