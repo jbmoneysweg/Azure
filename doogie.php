@@ -62,7 +62,7 @@ $visit = $visit + 1;
 } 
   $time = $time / $visit;
   $value =  $value / $visit;
-  $sendback = $time + "." + $value + "";
+  $sendback = array($time, $value);
   return $sendback;
 }
 }
