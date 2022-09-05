@@ -55,7 +55,7 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
-  if ($visit < 3) {
+  if ($visit < 2) {
 $time = ($row[0]) ;
 $value = ($row[1]) ;
   }
