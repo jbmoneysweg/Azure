@@ -18,7 +18,7 @@ $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
 $visit = 1;
 $time = 0.0;
-$value = 0.0;
+$value = "";
 $sendback = "";
 
 $serverName = "jbsdatatest.database.windows.net";  
