@@ -9,6 +9,13 @@ $time = 0.0;
 $value = 0.0;
 $sendback = "";
 $table = "";
+$password1 = "Jeremiah72*";
+$pass;
+
+if ($a == 1) {
+    $pass = $password1;
+}
+
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -25,7 +32,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test8 WHERE password=" + "'" + $a + "'"; 
+$sql = "SELECT * FROM test8 WHERE password=" + $pass; 
 //$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
@@ -64,7 +71,7 @@ $aResult = array();
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = compare(strval($_POST['arguments'][0]), intval($_POST['arguments'][1]));
+                   $aResult['result'] = compare(intval($_POST['arguments'][0]), intval($_POST['arguments'][1]));
                }
                break;
 
