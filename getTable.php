@@ -25,7 +25,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test8 WHERE password="$a""; 
+$sql = "SELECT * FROM test8 WHERE password=" + $a; 
 //$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
