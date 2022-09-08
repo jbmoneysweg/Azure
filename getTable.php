@@ -2,53 +2,46 @@
     header('Content-Type: application/json');
 
     function compare($a,$b){
-        $password = "";
+        $password = "Jeremiah72*";
         $table = "";
-        if ($a == 1) {
+        $c = 1;
+        if ($a == $c) {
             $password = "Jeremiah72*";
-        }
-  $serverName = "jbsdatatest.database.windows.net";  
-$connectionOptions = array(  
-    "Database" => "JBsDataTest",  
-    "UID" => "jbmoneysweg",  
-    "PWD" => "Jeremiah72*"  
-);  
-$conn = sqlsrv_connect($serverName, $connectionOptions);  
+        } 
+            
+        $serverName = "jbsdatatest.database.windows.net";  
+        $connectionOptions = array(  
+            "Database" => "JBsDataTest",  
+            "UID" => "jbmoneysweg",  
+            "PWD" => "Jeremiah72*"  
+        );  
+        $conn = sqlsrv_connect($serverName, $connectionOptions);  
   
 
-if ($conn === false)  
-    {  
-    die(print_r(sqlsrv_errors() , true));  
-    }  
+        if ($conn === false)  
+            {  
+            die(print_r(sqlsrv_errors() , true));  
+            }  
 
 
-$sql = "SELECT * FROM test9 WHERE password='" + $password + "'"; 
-//$sql = "SELECT * FROM test5"; 
-$stmt = sqlsrv_query($conn, $sql); 
-if($stmt === false) 
-{ 
-die(print_r(sqlsrv_errors(), true)); 
-} 
+        $sql = "SELECT * FROM test9 WHERE password='" + $password + "'"; 
+
+        $stmt = sqlsrv_query($conn, $sql); 
+        if($stmt === false) 
+            { 
+            die(print_r(sqlsrv_errors(), true)); 
+            } 
  
-if(sqlsrv_has_rows($stmt)) 
-{ 
-    /*
-print("<table border='1px'>"); 
-print("<tr><td>Emp Id</td>"); 
-print("<td>Name</td>"); 
-print("<td>education</td>"); 
-print("<td>Email</td></tr>"); 
- */
-while($row = sqlsrv_fetch_array($stmt)) //!= NULL
-{ 
-//if ($row['Ip'] == $ip) {
-    $table = $row[1];
-//}
-} 
-return $table;
+        if(sqlsrv_has_rows($stmt)) 
+        { 
+            while($row = sqlsrv_fetch_array($stmt)) //!= NULL
+                { 
+                $table = $row[1];
+                } 
+            return $table;
   
-}
-}
+        }
+    }
 
 
     $aResult = array();
