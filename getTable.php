@@ -1,5 +1,5 @@
 <?php
-    header('Content-Type: application/json');
+    
 
     function compare($a,$b){
         $c = $a+$b;
@@ -73,3 +73,5 @@
     echo json_encode($aResult);
 
 ?>
+
+
