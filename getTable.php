@@ -2,10 +2,11 @@
     header('Content-Type: application/json');
 
     function compare($a,$b){
+        $c = $a+$b;
         $password = "Jeremiah72*";
         $table = "";
-        $c = 1;
-        if ($a == $c) {
+        $d = 1;
+        if ($a == $d) {
             $password = "Jeremiah72*";
         } 
             
