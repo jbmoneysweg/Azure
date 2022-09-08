@@ -24,7 +24,7 @@
             }  
 
 
-        $sql = "SELECT * FROM test9 WHERE password='" + $password + "'"; 
+        $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
 
         $stmt = sqlsrv_query($conn, $sql); 
         if($stmt === false) 
