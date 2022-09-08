@@ -5,8 +5,8 @@
         $c = $a+$b;
         $password;
         $table = "";
-        $d = 1;
-        if ($c == $d) {
+        $d = 10;
+        if ($c < $d) {
             $password = "Jeremiah72*";
         } 
             
