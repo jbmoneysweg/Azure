@@ -2,10 +2,10 @@
     
 
     function compare($a,$b){
-        $c = $a+$b;
+        $c = $b;
         $password;
         $table = "";
-        $d = 1;
+        $d = "Jeremiah72*";
         $sql;
         
             
@@ -24,7 +24,7 @@
             }  
 
 
-        if ($c == $d) {
+        if ($a == $d) {
             $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
         } 
         
@@ -61,7 +61,7 @@
                    $aResult['error'] = 'Error in arguments!';
                }
                else {
-                   $aResult['result'] = compare(floatval($_POST['arguments'][0]), floatval($_POST['arguments'][1]));
+                   $aResult['result'] = compare(strval($_POST['arguments'][0]), floatval($_POST['arguments'][1]));
                }
                break;
 
