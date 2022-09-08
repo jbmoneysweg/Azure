@@ -5,7 +5,7 @@
         $c = $a+$b;
         $password;
         $table = "";
-        $d = 10;
+        $d = 1;
         $sql;
         
             
@@ -24,8 +24,7 @@
             }  
 
 
-        if ($c < $d) {
-            $password = "Jeremiah72*";
+        if ($c == $d) {
             $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
         } 
         
