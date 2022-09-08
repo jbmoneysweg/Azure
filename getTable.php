@@ -26,7 +26,9 @@
 
         if ($a == $d) {
             $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
-        } 
+        } else {
+            return "error"
+        }
         
 
         $stmt = sqlsrv_query($conn, $sql); 
