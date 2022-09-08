@@ -22,7 +22,7 @@ if ($conn === false)
     }  
 
 
-$sql = "SELECT * FROM test9 WHERE password="'" + $password + "'" "; 
+$sql = "SELECT * FROM test9 WHERE password='" + $password + "'"; 
 //$sql = "SELECT * FROM test5"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt === false) 
