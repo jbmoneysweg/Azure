@@ -2,8 +2,52 @@
     header('Content-Type: application/json');
 
     function compare($a,$b){
-  $c=$a+$b;
-  return $c;
+        $password = "";
+        $table = "";
+        if ($a == 1) {
+            $password = "Jeremiah72*";
+        }
+  $serverName = "jbsdatatest.database.windows.net";  
+$connectionOptions = array(  
+    "Database" => "JBsDataTest",  
+    "UID" => "jbmoneysweg",  
+    "PWD" => "Jeremiah72*"  
+);  
+$conn = sqlsrv_connect($serverName, $connectionOptions);  
+  
+
+if ($conn === false)  
+    {  
+    die(print_r(sqlsrv_errors() , true));  
+    }  
+
+
+$sql = "SELECT * FROM test9 WHERE Ip='" + $password + "'" "; 
+//$sql = "SELECT * FROM test5"; 
+$stmt = sqlsrv_query($conn, $sql); 
+if($stmt === false) 
+{ 
+die(print_r(sqlsrv_errors(), true)); 
+} 
+ 
+if(sqlsrv_has_rows($stmt)) 
+{ 
+    /*
+print("<table border='1px'>"); 
+print("<tr><td>Emp Id</td>"); 
+print("<td>Name</td>"); 
+print("<td>education</td>"); 
+print("<td>Email</td></tr>"); 
+ */
+while($row = sqlsrv_fetch_array($stmt)) //!= NULL
+{ 
+//if ($row['Ip'] == $ip) {
+    $table = $row[1];
+//}
+} 
+return $table;
+  
+}
 }
 
 
