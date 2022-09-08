@@ -6,9 +6,8 @@
         $password;
         $table = "";
         $d = 10;
-        if ($c < $d) {
-            $password = "Jeremiah72*";
-        } 
+        $sql;
+        
             
         $serverName = "jbsdatatest.database.windows.net";  
         $connectionOptions = array(  
@@ -25,7 +24,11 @@
             }  
 
 
-        $sql = "SELECT * FROM test9 WHERE password='" + $password + "'"; 
+        if ($c < $d) {
+            $password = "Jeremiah72*";
+            $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
+        } 
+        
 
         $stmt = sqlsrv_query($conn, $sql); 
         if($stmt === false) 
