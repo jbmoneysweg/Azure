@@ -3,10 +3,10 @@
 
     function compare($a,$b){
         $c = $a+$b;
-        $password = "Jeremiah72*";
+        $password;
         $table = "";
         $d = 1;
-        if ($a == $d) {
+        if ($c == $d) {
             $password = "Jeremiah72*";
         } 
             
@@ -25,7 +25,7 @@
             }  
 
 
-        $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
+        $sql = "SELECT * FROM test9 WHERE password='" + $password + "'"; 
 
         $stmt = sqlsrv_query($conn, $sql); 
         if($stmt === false) 
