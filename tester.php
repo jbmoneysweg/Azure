@@ -12,7 +12,6 @@ $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
-//$busName = $_POST["busName"];
 $visit = 1;
 
 $serverName = "jbsdatatest.database.windows.net";  
@@ -55,7 +54,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 } 
   
 }
-$visit = intval($visit);
+//$visit = intval($visit);
 
 
         /*Insert data.*/  
