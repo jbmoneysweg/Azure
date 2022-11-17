@@ -49,10 +49,10 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 } 
 }
 $insertSql = "INSERT INTO test15 (Ip,locations,visit,page,business)   
-VALUES (?,?,?,?,?)";  
-        $params = array($ip, $locations, $visit, $pgOne, $busName
-        );  
-        $stmt = sqlsrv_query($conn, $insertSql, $params);  
+VALUES ('" + $ip + "'," + " '" + $locations + "'," + " '" + $visit + "'," + " '" + $pgOne + "'," + " '" + $busName + "')";  
+        //$params = array($ip, $locations, $visit, $pgOne, $busName
+        //);  
+        $stmt = sqlsrv_query($conn, $insertSql);  
        
        return 0;
 }
