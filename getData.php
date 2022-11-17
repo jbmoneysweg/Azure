@@ -26,11 +26,9 @@
             }  
 
 
-        if ($a == $d) {
-            $sql = "SELECT * FROM test5";  
-        } else {
-            return "error";
-        }
+        
+            $sql = "SELECT * FROM " + $b;  
+        
         
 
         $stmt = sqlsrv_query($conn, $sql); 
