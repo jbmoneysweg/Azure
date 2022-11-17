@@ -25,7 +25,7 @@
 
 
         if ($a == $d) {
-            $sql = "SELECT * FROM test9 WHERE password='Jeremiah72*'"; 
+            $sql = "SELECT * FROM test9 WHERE password='".$a."'"; 
         } else {
             return "error";
         }
