@@ -57,7 +57,7 @@ VALUES (?,?,?,?,?)";
         $params = array($ip, $locations, $visit, $pgOne, $busName
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
-        if ($stmt === false) {
+        if ($stmt == false) {
                 die(print_r($errors, true));       
             }  
           else  
