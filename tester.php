@@ -1,11 +1,4 @@
 <?
-
-
-
-
-
-
-
 // PHP Data Objects(PDO) Sample Code:
 
 //extension_dir = "\SQLSRV510";
@@ -64,20 +57,8 @@ VALUES (?,?,?,?,?)";
         $params = array($ip, $locations, $visit, $pgOne, $busName
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
-        if ($stmt === false)  
-            {  
-            /*Handle the case of a duplicte e-mail address. */
-            $errors = sqlsrv_errors();  
-            if ($errors[0]['code'] == 2601)  
-                {  
-                echo "The e-mail address you entered has already been used.</br>";  
-                }  
-  
-            /*Die if other errors occurred.*/
-              else  
-                {  
-                die(print_r($errors, true));  
-                }  
+        if ($stmt === false) {
+                die(print_r($errors, true));       
             }  
           else  
             {  
