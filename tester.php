@@ -23,33 +23,6 @@ $connectionOptions = array(
 $conn = sqlsrv_connect($serverName, $connectionOptions);  
   
 
-if ($conn === false)  
-    {  
-    die(print_r(sqlsrv_errors() , true));  
-    }  
-
-
-$sql = "SELECT * FROM test15 WHERE Ip='" + $ip + "'"; 
-//$sql = "SELECT * FROM test15"; 
-$stmt = sqlsrv_query($conn, $sql); 
-if($stmt == false) 
-{ 
-die(print_r(sqlsrv_errors(), true)); 
-} 
- 
-if(sqlsrv_has_rows($stmt)) 
-{
-while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
-{ 
-//if ($row['Ip'] == $ip) {
-    $visit = $visit + 1;
-//}
-} 
-  
-}
-//$visit = intval($visit);
-$visit = strval($visit);
-
 
         /*Insert data.*/  
         $insertSql = "INSERT INTO test15 (Ip,locations,visit,page,business)   
