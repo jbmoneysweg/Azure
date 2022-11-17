@@ -18,6 +18,7 @@ $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
+$busName = $_POST["busName"];
 $visit = 1;
 
 $serverName = "jbsdatatest.database.windows.net";  
@@ -65,9 +66,9 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 
 
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test5 (Ip,locations,visit,page)   
-VALUES (?,?,?,?)";  
-        $params = array($ip, $locations, $visit, $pgOne
+        $insertSql = "INSERT INTO test15 (Ip,locations,visit,page,business)   
+VALUES (?,?,?,?,?)";  
+        $params = array($ip, $locations, $visit, $pgOne, $busName
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
