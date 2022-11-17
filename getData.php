@@ -9,6 +9,7 @@
         $locations = array();
         $visit = array();
         $page = array();
+        $business = array();
         $carrier = array();
             
         $serverName = "jbsdatatest.database.windows.net";  
@@ -41,12 +42,14 @@
         { 
             while($row = sqlsrv_fetch_array($stmt)) //!= NULL
                 { 
-                array_push($Ip, $row[1]);
-                array_push($locations, $row[2]);
-                array_push($visit, $row[3]);
-                array_push($page, $row[4]);
+                
+                array_push($Ip, $row[0]);
+                array_push($locations, $row[1]);
+                array_push($visit, $row[2]);
+                array_push($page, $row[3]);
+                array_push($business, $row[4]);
                 } 
-            array_push($carrier, $Ip, $locations, $visit, $page);
+            array_push($carrier, $Ip, $locations, $visit, $page, $business);
             return $carrier;
   
         }
