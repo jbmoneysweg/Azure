@@ -23,12 +23,7 @@
             die(print_r(sqlsrv_errors() , true));  
             }  
 
-
-        if ($a == $d) {
-            $sql = "SELECT * FROM test9 WHERE password='".$a."'"; 
-        } else {
-            return "error";
-        }
+         $sql = "SELECT * FROM test9 WHERE password='".$a."'";
         
 
         $stmt = sqlsrv_query($conn, $sql); 
