@@ -27,7 +27,7 @@
 
 
         
-            $sql = "SELECT * FROM " + $b;  
+            $sql = "SELECT * FROM test15";  
         
         
 
