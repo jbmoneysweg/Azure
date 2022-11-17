@@ -41,17 +41,18 @@ print("<td>Name</td>");
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
  */
+ /*
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row['Ip'] == $ip) {
     $visit = $visit + 1;
 //}
-} 
+} */
 }
 $insertSql = "INSERT INTO test15 (Ip,locations,visit,page,business)   
-VALUES ('" + $ip + "'," + " '" + $locations + "'," + " '" + $visit + "'," + " '" + $pgOne + "'," + " '" + $busName + "')";  
-        //$params = array($ip, $locations, $visit, $pgOne, $busName
-        //);  
+VALUES (?,?,?,?,?)";  
+        $params = array($ip, $locations, $visit, $pgOne, $busName
+        );  
         $stmt = sqlsrv_query($conn, $insertSql);  
        
        return 0;
