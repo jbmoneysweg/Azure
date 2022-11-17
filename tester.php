@@ -59,7 +59,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 
 
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test5 (Ip,locations,visit,page,business)   
+        $insertSql = "INSERT INTO test15 (Ip,locations,visit,page,business)   
 VALUES (?,?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne, $busName  
         );  
