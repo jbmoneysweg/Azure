@@ -35,7 +35,7 @@ if ($conn === false)
     die(print_r(sqlsrv_errors() , true));  
     }  
 
-/*
+
 $sql = "SELECT * FROM test15 WHERE Ip='" + $ip + "'" "; 
 //$sql = "SELECT * FROM test15"; 
 $stmt = sqlsrv_query($conn, $sql); 
@@ -43,17 +43,9 @@ if($stmt === false)
 { 
 die(print_r(sqlsrv_errors(), true)); 
 } 
- */
-/*
+ 
 if(sqlsrv_has_rows($stmt)) 
 {
-    
-print("<table border='1px'>"); 
-print("<tr><td>Emp Id</td>"); 
-print("<td>Name</td>"); 
-print("<td>education</td>"); 
-print("<td>Email</td></tr>"); 
-  
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row['Ip'] == $ip) {
@@ -61,7 +53,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 //}
 } 
   
-}*/
+}
 //$visit = intval($visit);
 
 
