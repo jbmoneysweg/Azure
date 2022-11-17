@@ -128,14 +128,14 @@ die(print_r(sqlsrv_errors(), true));
 } 
  
 if(sqlsrv_has_rows($stmt)) 
-{ 
+{ */
     /*
 print("<table border='1px'>"); 
 print("<tr><td>Emp Id</td>"); 
 print("<td>Name</td>"); 
 print("<td>education</td>"); 
 print("<td>Email</td></tr>"); 
- */
+ *//*
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row['Ip'] == $ip) {
@@ -147,7 +147,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 //$visit = intval($visit);
 
 
-        /*Insert data.*/  
+        /*Insert data.*/  /*
         $insertSql = "INSERT INTO test5 (Ip,locations,visit,page)   
 VALUES (?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne
@@ -155,14 +155,14 @@ VALUES (?,?,?,?)";
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
             {  
-            /*Handle the case of a duplicte e-mail address. */ 
+            /*Handle the case of a duplicte e-mail address. */ /*
             $errors = sqlsrv_errors();  
             if ($errors[0]['code'] == 2601)  
                 {  
                 echo "The e-mail address you entered has already been used.</br>";  
                 }  
   
-            /*Die if other errors occurred.*/  
+            /*Die if other errors occurred.*/  /*
               else  
                 {  
                 die(print_r($errors, true));  
