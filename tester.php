@@ -55,6 +55,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
   
 }
 //$visit = intval($visit);
+$visit = strval($visit);
 
 
         /*Insert data.*/  
