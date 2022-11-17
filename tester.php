@@ -38,7 +38,7 @@ die(print_r(sqlsrv_errors(), true));
  
 if(sqlsrv_has_rows($stmt)) 
 {
-while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
+while($row == sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row['Ip'] == $ip) {
     $visit = $visit + 1;
