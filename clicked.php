@@ -8,9 +8,9 @@
 
 //extension=php_pdo.dll;
 
-$ip = $_POST["ips"];
+$company = $_POST["company"];
 $button = $_POST["button"];
-$time = $_POST["time"];
+$table = $_POST["tableName"];
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -28,9 +28,9 @@ if ($conn === false)
 
 
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test6 (Ip,button,time)   
-VALUES (?,?,?,?)";  
-        $params = array($ip, $button, $time  
+        $insertSql = "INSERT INTO ".$table." (Company,Button)   
+VALUES (?,?)";  
+        $params = array($company, $button  
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
