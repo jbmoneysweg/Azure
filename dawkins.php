@@ -12,6 +12,7 @@ $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pgOne"];
 $busName = $_POST["busName"];
+$table = $_POST["table"];
 $visit = 1;
 
 $serverName = "jbsdatatest.database.windows.net";  
@@ -29,7 +30,7 @@ if ($conn == false)
 
 
 //$sql = "SELECT * FROM test15 WHERE Ip='" + strval($ip) + "'";
-$sql = "SELECT * FROM test15 WHERE Ip= '".$ip."'";
+$sql = "SELECT * FROM ".$table." WHERE Ip= '".$ip."'";
 //$sql = "SELECT * FROM test15"; 
 $stmt = sqlsrv_query($conn, $sql); 
 if($stmt == false) 
@@ -52,7 +53,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 
 
         /*Insert data.*/  
-        $insertSql = "INSERT INTO test15 (Ip,locations,visit,page,business)   
+        $insertSql = "INSERT INTO ".$table." (Ip,locations,visit,page,business)   
 VALUES (?,?,?,?,?)";  
         $params = array($ip, $locations, $visit, $pgOne, $busName
         );  
