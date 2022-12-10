@@ -43,9 +43,9 @@ print("<td>Email</td></tr>");
  */
 while($row = sqlsrv_fetch_array($stmt)) //!= NULL
 { 
-array_push($Ip, $row[1]);
-array_push($page, $row[2]);
-array_push($seconds, $row[3]);
+array_push($Ip, $row[0]);
+array_push($page, $row[1]);
+array_push($seconds, $row[2]);
 } 
 array_push($carrier, $Ip, $page, $seconds);
   return $carrier;
