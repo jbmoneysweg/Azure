@@ -23,7 +23,7 @@
             die(print_r(sqlsrv_errors() , true));  
             }  
 
-         $sql = "SELECT * FROM test9 WHERE password='".$a."'";
+         $sql = "SELECT * FROM passwords WHERE password='".$a."'";
         
 
         $stmt = sqlsrv_query($conn, $sql); 
