@@ -7,6 +7,7 @@ $sendback = "";
 $Ip = array();
 $page = array();
 $seconds = array();
+$carrier = array();
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
