@@ -11,7 +11,7 @@
 $ip = $_POST["ips"];
 $page = $_POST["page"];
 $seconds = $_POST["seconds"];
-$table = $_POST["table"]
+$table = $_POST["table"];
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
