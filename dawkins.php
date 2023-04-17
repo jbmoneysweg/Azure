@@ -7,6 +7,7 @@
 
 //extension=php_pdo.dll;
 
+$dates = $_POST["dates"];
 $ip = $_POST["ipAdd"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
@@ -51,9 +52,9 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 //$visit = intval($visit);
 
 /*Insert data.*/  
-        $insertSql = "INSERT INTO ".$table." (Ip,locations,visit,page,business)   
-VALUES (?,?,?,?,?)";  
-        $params = array($ip, $locations, $visit, $pgOne, $busName
+        $insertSql = "INSERT INTO ".$table." (Ip,locations,visit,page,business,Dates)   
+VALUES (?,?,?,?,?,?)";  
+        $params = array($ip, $locations, $visit, $pgOne, $busName, $dates
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
