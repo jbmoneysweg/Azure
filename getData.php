@@ -10,6 +10,7 @@
         $visit = array();
         $page = array();
         $business = array();
+        $dates = array();
         $carrier = array();
             
         $serverName = "jbsdatatest.database.windows.net";  
@@ -48,8 +49,9 @@
                 array_push($visit, $row[2]);
                 array_push($page, $row[3]);
                 array_push($business, $row[4]);
+                array_push($dates, $row[5]);
                 } 
-            array_push($carrier, $Ip, $locations, $visit, $page, $business);
+            array_push($carrier, $Ip, $locations, $visit, $page, $business, $dates);
             return $carrier;
   
         }
