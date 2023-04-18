@@ -11,7 +11,6 @@
         $page = array();
         $businesstwo = array();
         $business = array();
-        $carrier = array();
             
         $serverName = "jbsdatatest.database.windows.net";  
         $connectionOptions = array(  
@@ -51,7 +50,7 @@
                 array_push($business, $row[4]);
                 
                 } 
-            array_push($carrier, $Ip, $locations, $visit, $page, $businesstwo, $business);
+            $carrier = array($Ip, $locations, $visit, $page, $business, $businesstwo)
             return $carrier;
   
         }
