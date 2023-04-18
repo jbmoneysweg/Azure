@@ -43,10 +43,10 @@
         { 
             while($row = sqlsrv_fetch_array($stmt)) //!= NULL
                 {
-                array_push($Ip, $row[0]);
+                array_push($Ip, $row[0]."-".$row[4]);
                 array_push($locations, $row[1]);
                 array_push($visit, $row[2]."-".$row[5]);
-                array_push($page, $row[3]."-".$row[4]);
+                array_push($page, $row[3]);
                 array_push($business, $row[4]);
                 
                 } 
@@ -54,7 +54,6 @@
             $carrier[1] = $locations;
             $carrier[2] = $visit;
             $carrier[3] = $page;
-            $carrier[4] = $business;
             return $carrier;
   
         }
