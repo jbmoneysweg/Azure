@@ -45,7 +45,7 @@
                 {
                 array_push($Ip, $row[0]);
                 array_push($locations, $row[1]);
-                array_push($visit, $row[2]."*".$row[5]);
+                array_push($visit, $row[2]."~".$row[5]);
                 array_push($page, $row[3]);
                 array_push($business, $row[4]);
                 
