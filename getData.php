@@ -50,7 +50,7 @@
                 array_push($business, $row[5]);
                 array_push($days, $row[5]);
                 } 
-            array_push($carrier, $Ip, $locations, $visit, $page, $business);
+            array_push($carrier, $Ip, $locations, $visit, $page, $business, $business);
             array_push($carrier, $days);
             return $carrier;
   
