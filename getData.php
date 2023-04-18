@@ -42,8 +42,7 @@
         if(sqlsrv_has_rows($stmt)) 
         { 
             while($row = sqlsrv_fetch_array($stmt)) //!= NULL
-                { 
-                
+                {
                 array_push($Ip, $row[0]);
                 array_push($locations, $row[1]);
                 array_push($visit, $row[2]);
@@ -51,7 +50,8 @@
                 array_push($business, $row[4]);
                 array_push($dates, $row[5]);
                 } 
-            array_push($carrier, $Ip, $locations, $visit, $page, $business, $dates);
+            array_push($carrier, $Ip, $locations, $visit, $page, $business);
+            array_push($carrier, $dates);
             return $carrier;
   
         }
