@@ -51,9 +51,7 @@
                 array_push($business, $row[4]);
                 
                 } 
-            array_push($carrier, $Ip, $locations, $visit, $page, $business);
-            $business = $businesstwo;
-            array_push($carrier, $business);
+            array_push($carrier, $Ip, $locations, $visit, $page, $businesstwo, $business);
             return $carrier;
   
         }
