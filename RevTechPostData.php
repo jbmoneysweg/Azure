@@ -52,7 +52,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 
 /*Insert data.*/  
         $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits)   
-VALUES (?,?,?,?,?,?)";  
+VALUES (?,?,?,?,?)";  
         $params = array($ip, $dates, $pgOne, $locations, $visit
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
