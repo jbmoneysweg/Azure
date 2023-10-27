@@ -49,7 +49,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     $dat2->add(new DateInterval('PT' . $minutes_to_add . 'M'));
     $stamp = $dat2->format('Y-m-d H:i');
     if ($stamp > $dates) {
-        $visit = $row[4];
+        $visit = "6";//$row[4];
     }
 //}
 } 
