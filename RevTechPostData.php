@@ -63,7 +63,7 @@ if ($visit == 0) {
 if ($visit == 0 && $visitoff == 0) {
     $visit = 0;
 }
-}
+
 //$visit = intval($visit);
 
 /*Insert data.*/  
