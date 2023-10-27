@@ -7,15 +7,13 @@
 
 //extension=php_pdo.dll;
 
-
+$dates = $_POST["time"];
 $ip = $_POST["ips"];
 $locations = $_POST["locations"];
-$visits= $_POST["visit"];
-$pages = $_POST["pages"]
-$timestamp = $_POST["time"];
+$visit = $_POST["visit"];
+$pgOne = $_POST["pages"];
 $table = $_POST["table"];
-$visit =  "0";
-$visitoff = "0";
+$visit = "1";
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -44,34 +42,21 @@ if(sqlsrv_has_rows($stmt))
 {
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
-
-    $visitoff = $row[4]
-    $dat = new DateTime($timestamp);
-    $dat2 = new DateTime($row[1])
-    $dat2->add(new DateInterval('PT' . $minutes_to_add . 'M'));
-    $stamp = $dat2->format('Y-m-d H:i');
-    if ($stamp > $dat) {
-    $visit = $row[4];
-    }
-    
+//if ($row[0] == $ip) {
+    //$visit = $visit + 1;
+//}
 } 
+  
 }
-/*if ($visit == 0) {
-  $visit = $visitoff;
-}
-
-if ($visit == 0 && $visitoff == 0) {
-    $visit = 0;
-}*/
-
 //$visit = intval($visit);
 
 /*Insert data.*/  
         $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits)   
 VALUES (?,?,?,?,?,?)";  
-        $params = array($ip,$timestamp,$pages,$locations,$visit);  
-        $stmt2 = sqlsrv_query($conn, $insertSql, $params);  
-        if ($stmt2 === false)  
+        $params = array($ip, $dates, $pgOne, $locations, $visit
+        );  
+        $stmt = sqlsrv_query($conn, $insertSql, $params);  
+        if ($stmt === false)  
             {  
             /*Handle the case of a duplicte e-mail address. */ 
             $errors = sqlsrv_errors();  
