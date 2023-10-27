@@ -6,8 +6,8 @@
 //extension=php_sqlsrv_72_ts.dll;
 
 //extension=php_pdo.dll;
-
-$dates = $_POST["time"];
+$timestamp = $_POST["time"];
+$dates = new DateTime($timestamp);
 $ip = $_POST["ips"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
