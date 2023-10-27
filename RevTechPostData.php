@@ -55,7 +55,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     }
     
 } 
-
+}
 if ($visit == 0) {
   $visit = $visitoff;
 }
