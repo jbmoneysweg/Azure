@@ -14,8 +14,8 @@ $visits= $_POST["visit"];
 $pages = $_POST["pages"]
 $timestamp = $_POST["time"];
 $table = $_POST["table"];
-$visit =  0;
-$visitoff = 0;
+$visit =  "0";
+$visitoff = "0";
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
