@@ -56,13 +56,13 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     
 } 
 }
-if ($visit == 0) {
+/*if ($visit == 0) {
   $visit = $visitoff;
 }
 
 if ($visit == 0 && $visitoff == 0) {
     $visit = 0;
-}
+}*/
 
 //$visit = intval($visit);
 
@@ -70,8 +70,8 @@ if ($visit == 0 && $visitoff == 0) {
         $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits)   
 VALUES (?,?,?,?,?,?)";  
         $params = array($ip,$timestamp,$pages,$locations,$visit);  
-        $stmt = sqlsrv_query($conn, $insertSql, $params);  
-        if ($stmt === false)  
+        $stmt2 = sqlsrv_query($conn, $insertSql, $params);  
+        if ($stmt2 === false)  
             {  
             /*Handle the case of a duplicte e-mail address. */ 
             $errors = sqlsrv_errors();  
