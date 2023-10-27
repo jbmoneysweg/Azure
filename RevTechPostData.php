@@ -44,10 +44,9 @@ if(sqlsrv_has_rows($stmt))
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row[0] == $ip) {
-    $visitoff = $row[4]
+    $visitoff = $row[4];
     $dat2 = $row[1];
-    $dat2->add(new DateInterval('ET' . $minutes_to_add . 'M'));
-    $stamp = $dat2->format('Y-m-d H:i');
+    $stamp = date($dat2, strtotime(' +5 minutes '));
     if ($stamp > $dates) {
         $visit = "6";//$row[4];
     }
