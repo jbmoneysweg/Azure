@@ -13,7 +13,8 @@ $locations = $_POST["locations"];
 $visit = $_POST["visit"];
 $pgOne = $_POST["pages"];
 $table = $_POST["table"];
-$visit = "1";
+$visit =  "0";
+$visitoff = "0";
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -43,7 +44,13 @@ if(sqlsrv_has_rows($stmt))
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row[0] == $ip) {
-    //$visit = $visit + 1;
+    $visitoff = $row[4]
+    $dat2 = strtotime($row[1]);
+    $dat2->add(new DateInterval('PT' . $minutes_to_add . 'M'));
+    $stamp = $dat2->format('Y-m-d H:i');
+    if ($stamp > $dates) {
+        $visit = $row[4];
+    }
 //}
 } 
   
