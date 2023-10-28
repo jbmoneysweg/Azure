@@ -46,7 +46,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 //if ($row[0] == $ip) {
     $visitoff = $row[4];
     $dat2 = $row[1];
-    $stamp = date($dat2, strtotime(' -5 minutes '));
+    $stamp = date($dat2, strtotime(' +5 minutes '));
     if ($stamp > $dates) {
         $visit = $row[4];//;
     }
