@@ -48,14 +48,16 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     $dat2 = $row[1];
     $stamp = date($dat2, strtotime(' +5 minutes '));
     if ($stamp > $dates) {
-        $visit = "6";//$row[4];
+        $visit = $row[4];//;
     }
 //}
 } 
   
 }
 //$visit = intval($visit);
-
+if ($visit == "0") {
+    $visit = $visitoff;
+}
 /*Insert data.*/  
         $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits)   
 VALUES (?,?,?,?,?)";  
