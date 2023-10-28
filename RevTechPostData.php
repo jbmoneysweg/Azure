@@ -55,7 +55,9 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
   
 }
 //$visit = intval($visit);
-
+if ($visit == "0") {
+    $visit = $visitoff;
+}
 /*Insert data.*/  
         $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits)   
 VALUES (?,?,?,?,?)";  
