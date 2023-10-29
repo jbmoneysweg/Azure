@@ -50,7 +50,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     //$stamp = date("Y-m-d H:i:s", $dat2);
     //$stamp = new DateTime("@".$dat2);
     $stamp = date($dat1, strtotime(' +5 minutes '));
-    $visitoff = $stamp.",".$dates;
+    $visitoff = $stamp;
     if ($stamp > $dates) {
         $visit = "Hello";//$row[4];//;
     }
