@@ -44,6 +44,7 @@ if(sqlsrv_has_rows($stmt))
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row[0] == $ip) {
+    if (!empty($row[1])) {
     $visitoff = "Hey";//(int)$row[4] + 1;
     $dat1 = $row[1];
     $dat2 = strtotime($dat1) + (60*5);
@@ -54,6 +55,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     $visitoff = $row[1];
     if ($stamp > $dates) {
         $visit = "Hello";//$row[4];//;
+    }
     }
 //}
 } 
