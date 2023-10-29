@@ -46,7 +46,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row[0] == $ip) {
     
-    $visitoff = "Hey";//(int)$row[4] + 1;
+    //$visitoff = "Hey";//(int)$row[4] + 1;
     $dat1 = $row[1];
     $dat2 = strtotime($dat1) + (60*5);
     $stamp = date("Y-m-d H:i:s", $dat2);
