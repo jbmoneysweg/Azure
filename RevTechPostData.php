@@ -44,11 +44,11 @@ if(sqlsrv_has_rows($stmt))
 while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row[0] == $ip) {
-    $visitoff = (int)$row[4] + 1;
+    $visitoff = "Hey";//(int)$row[4] + 1;
     $dat2 = $row[1];
     $stamp = date($dat2, strtotime(' +5 minutes '));
-    if ($stamp < $dates) {
-        $visit = $row[4];//;
+    if ($stamp > $dates) {
+        $visit = "Hello";//$row[4];//;
     }
 //}
 } 
