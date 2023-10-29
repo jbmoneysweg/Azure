@@ -15,6 +15,7 @@ $pgOne = $_POST["pages"];
 $table = $_POST["table"];
 $visit =  "0";
 $visitoff = "0";
+$counter = 0;
 
 $serverName = "jbsdatatest.database.windows.net";  
 $connectionOptions = array(  
@@ -52,7 +53,11 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     //$stamp = new DateTime("@".$dat2);
     
     //$stamp = date($dat2, strtotime(' +5 minutes '));
-    $visitoff = $row[2];
+    if ($counter == 0) {
+        $visitoff = $row[2];
+        $counter = 1;
+    }
+    
     if ($stamp > $dates) {
         $visit = "Hello";//$row[4];//;
     }
