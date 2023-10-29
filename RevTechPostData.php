@@ -45,11 +45,12 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 { 
 //if ($row[0] == $ip) {
     $visitoff = "Hey";//(int)$row[4] + 1;
-    $dat2 = strtotime($row[1])+(60*5);
-    $datess = date("Y-m-d H:i:s", $dates);
-    $stamp = date("Y-m-d H:i:s", $dat2);
+    $dat1 = $row[1]."";
+    $dat2 = strtotime($dat1);
+    $dat3 = $dat2 + 300;
+    $stamp = new DateTime($dat3);
     //$stamp = date($dat2, strtotime(' +5 minutes '));
-    if ($stamp > $datess) {
+    if ($stamp > $dates) {
         $visit = "Hello";//$row[4];//;
     }
 //}
