@@ -47,9 +47,9 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
 //if ($row[0] == $ip) {
     
     //$visitoff = "Hey";//(int)$row[4] + 1;
-    $dat1 = $row[1];
-    $dat2 = strtotime($dat1) + (60*5);
-    $stamp = $dat1; //date("Y-m-d H:i:s", $dat2);
+    //$dat1 = $row[1];
+    //$dat2 = strtotime($dat1) + (60*5);
+    //$stamp = $dat1; //date("Y-m-d H:i:s", $dat2);
     //$stamp = new DateTime("@".$dat2);
     
     //$stamp = date($dat2, strtotime(' +5 minutes '));
@@ -57,10 +57,10 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
         $visitoff = $row[1];
         $counter = "1";
     }
-    
+    /*
     if ($stamp > $dates) {
         $visit = "Hello";//$row[4];//;
-    }
+    }*/
     
 //}
 } 
