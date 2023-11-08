@@ -54,7 +54,7 @@ while($row = sqlsrv_fetch_array($stmt) != NULL) //!= NULL
     
     //$stamp = date($dat2, strtotime(' +5 minutes '));
     if ($counter == "0") {
-        $visitoff = $row[1];
+        $visitoff = $row[0];
         $counter = "1";
     }
     /*
