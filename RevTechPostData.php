@@ -7,7 +7,7 @@
 
 //extension=php_pdo.dll;
 $timestamp = $_POST["time"];
-$dates = new DateTime($timestamp);
+$dates = $timestamp; //new DateTime($timestamp);
 $ip = $_POST["ips"];
 $locations = $_POST["locations"];
 $visit = $_POST["visit"];
