@@ -41,7 +41,7 @@
  
         if(sqlsrv_has_rows($stmt)) 
         { 
-            while($row = sqlsrv_fetch_array($stmt)) //!= NULL
+            while($row == sqlsrv_fetch_array($stmt)) //!= NULL
                 {
                 array_push($Ip, $row[0]);
                 array_push($locations, $row[1]);
