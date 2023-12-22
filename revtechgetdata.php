@@ -8,6 +8,7 @@
         $visitTimes = array();
         $pages = array();
         $visits = array();
+        $refer = array();
         $carrier = array();
             
         $serverName = "jbsdatatest.database.windows.net";  
@@ -45,6 +46,7 @@
                 array_push($pages, $row[2]);
                 array_push($locations, $row[3]);
                 array_push($visits, $row[4]);
+                array_push($refer, $row[5]);
                 
                 } 
             $carrier[0] = $Ips;
@@ -52,6 +54,7 @@
             $carrier[2] = $pages;
             $carrier[3] = $locations;
             $carrier[4] = $visits;
+            $carrier[5] = $refer;
             return $carrier;
   
         }
