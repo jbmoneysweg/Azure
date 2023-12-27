@@ -8,6 +8,7 @@
 //extension=php_pdo.dll;
 $timestamp = $_POST["time"];
 $refer = $_POST["refer"];
+$button = $_POST["button"];
 $dates = $timestamp; //new DateTime($timestamp);
 $ip = $_POST["ips"];
 $locations = $_POST["locations"];
@@ -72,9 +73,9 @@ if ($visit == "0") {
     $visit = $visitoff;
 }
 /*Insert data.*/  
-        $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits,refer)   
-VALUES (?,?,?,?,?,?)";  
-        $params = array($ip, $dates, $pgOne, $locations, $visit, $refer
+        $insertSql = "INSERT INTO ".$table." (ip,visittime,page,location,visits,refer,button)   
+VALUES (?,?,?,?,?,?,?)";  
+        $params = array($ip, $dates, $pgOne, $locations, $visit, $refer, $button
         );  
         $stmt = sqlsrv_query($conn, $insertSql, $params);  
         if ($stmt === false)  
