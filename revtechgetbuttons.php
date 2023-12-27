@@ -1,10 +1,16 @@
- <?php
+<?php
     
 
     function compare($a,$b){
-        $c = $b;
-        $d = "test5";
-        $time;
+        $sql;
+        $Ips = array();
+        $locations = array();
+        $visitTimes = array();
+        $pages = array();
+        $visits = array();
+        $refer = array();
+        $button = array();
+        $carrier = array();
             
         $serverName = "jbsdatatest.database.windows.net";  
         $connectionOptions = array(  
@@ -21,11 +27,9 @@
             }  
 
 
-        if ($a == $d) {
-            $sql = "SELECT * FROM test10";  
-        } else {
-            return "error";
-        }
+        
+            $sql = "SELECT * FROM ".$a;  
+        
         
 
         $stmt = sqlsrv_query($conn, $sql); 
@@ -37,13 +41,24 @@
         if(sqlsrv_has_rows($stmt)) 
         { 
             while($row = sqlsrv_fetch_array($stmt)) //!= NULL
-                { 
-                    if ($time < $row[0]) {
-                        $time = $row[0]
-                    }
+                {
+                array_push($Ips, $row[0]);
+                array_push($visitTimes, $row[1]);
+                array_push($pages, $row[2]);
+                array_push($locations, $row[3]);
+                array_push($visits, $row[4]);
+                array_push($refer, $row[5]);
+                array_push($button, $row[6]);
+                
                 } 
-            
-            return $time;
+            $carrier[0] = $Ips;
+            $carrier[1] = $visitTimes;
+            $carrier[2] = $pages;
+            $carrier[3] = $locations;
+            $carrier[4] = $visits;
+            $carrier[5] = $refer;
+            $carrier[6] = $button;
+            return $carrier;
   
         }
     }
